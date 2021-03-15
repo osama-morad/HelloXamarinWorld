@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using Plugin.Permissions.Abstractions;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
+using HelloXamarinWorld.Model;
 
 namespace HelloXamarinWorld
 {
@@ -70,7 +71,7 @@ namespace HelloXamarinWorld
             if (hasLocationPermission)
             {
                 CrossGeolocator.Current.PositionChanged += Current_PositionChanged;
-                await CrossGeolocator.Current.StartListeningAsync(TimeSpan.Zero, 100);
+                await CrossGeolocator.Current.StartListeningAsync(TimeSpan.Zero, Constants.Min_DistanceToListenToLocation_Meter);
             }
         }
 
@@ -99,7 +100,7 @@ namespace HelloXamarinWorld
         private void MoveMap(Position position)
         {
             var center = new Xamarin.Forms.GoogleMaps.Position(position.Latitude, position.Longitude);
-            var mapSpan = new Xamarin.Forms.GoogleMaps.MapSpan(center, 0.1, 0.1);
+            var mapSpan = new Xamarin.Forms.GoogleMaps.MapSpan(center, Constants.Latitude_Degrees, Constants.Longitude_Degrees);
             locationMap.MoveToRegion(mapSpan);
         }
     }
