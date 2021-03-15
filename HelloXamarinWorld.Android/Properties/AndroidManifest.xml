@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.helloxamarinworld" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+	<application android:label="HelloXamarinWorld.Android" android:theme="@style/MainTheme">
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCCpzQMk0aqReAr-oAiWQk-MY3CJOc6H-8" />
+		<uses-library android:name="org.apache.http.legacy" android:required="false" />
+	</application>
+	<!--AIzaSyCCpzQMk0aqReAr-oAiWQk-MY3CJOc6H-8-->
+	<!--AIzaSyCfE339LfYiWOPVIUB_DHh3IMS3nc5iBuQ-->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+</manifest>
