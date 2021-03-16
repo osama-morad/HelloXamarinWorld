@@ -19,6 +19,11 @@
                 </FormattedString.Spans>
             </FormattedString>
         </Label.FormattedText>-->
+        <Image x:Name="icomImage"
+               Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               Margin="0, 0, 0, 50"
+               HeightRequest="150" />
         <Entry x:Name="userNameEntry" Text="Osama" 
                Placeholder="User name" 
                Keyboard="Email"

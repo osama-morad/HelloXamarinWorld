@@ -29,6 +29,9 @@
 
                                 <Label Text="{Binding name}"
                                        FontAttributes="Bold"/>
+                                <!--<Label Grid.Row="1" 
+                                       Text="{Binding referralId}" 
+                                       TextColor="DarkGreen"/>-->
                                 <Label Grid.Row="1" 
                                        Text="{Binding location.address}" 
                                        TextColor="DodgerBlue"/>

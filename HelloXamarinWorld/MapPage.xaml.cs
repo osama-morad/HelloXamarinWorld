@@ -11,6 +11,7 @@ using Plugin.Permissions.Abstractions;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using HelloXamarinWorld.Model;
+using SQLite;
 
 namespace HelloXamarinWorld
 {
@@ -72,6 +73,37 @@ namespace HelloXamarinWorld
             {
                 CrossGeolocator.Current.PositionChanged += Current_PositionChanged;
                 await CrossGeolocator.Current.StartListeningAsync(TimeSpan.Zero, Constants.Min_DistanceToListenToLocation_Meter);
+            }
+
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<Post>();
+                var experiences = conn.Table<Post>().ToList();
+                DisplayInMap(experiences);
+            }
+        }
+
+        private void DisplayInMap(List<Post> experiences)
+        {
+            foreach (var post in experiences)
+            {
+                try
+                {
+                    var position = new Xamarin.Forms.GoogleMaps.Position(post.Latitude, post.Longitude);
+
+                    var pin = new Xamarin.Forms.GoogleMaps.Pin()
+                    {
+                        Type = Xamarin.Forms.GoogleMaps.PinType.SavedPin,
+                        Label = post.VenueName,
+                        Address = post.Address,
+                        Position = position,
+                        Rotation = 33.3f,
+                        Tag = "id_osama",
+                    };
+                    locationMap.Pins.Add(pin);
+                }
+                catch (NullReferenceException nre) { }
+                catch (Exception ex) { }
             }
         }
 

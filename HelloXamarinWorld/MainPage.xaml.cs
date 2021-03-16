@@ -13,6 +13,10 @@ namespace HelloXamarinWorld
         public MainPage()
         {
             InitializeComponent();
+
+            var assembly = typeof(MainPage);
+
+            icomImage.Source = ImageSource.FromResource("HelloXamarinWorld.Assets.Images.plane.png", assembly);
         }
 
         private void loginButton_Clicked(object sender, EventArgs e)

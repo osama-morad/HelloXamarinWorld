@@ -22,12 +22,22 @@ namespace HelloXamarinWorld
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            try
             {
-                conn.CreateTable<Post>();
-                var experiences = conn.Table<Post>().ToList();
-                postListView.ItemsSource = experiences;
+                using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+                {
+                    conn.CreateTable<Post>();
+                    var experiences = conn.Table<Post>().ToList();
+                    postListView.ItemsSource = experiences;
+                }
+            }
+            catch (NullReferenceException nre)
+            {
+
+            }
+            catch(Exception ex)
+            {
+
             }
         }
 
