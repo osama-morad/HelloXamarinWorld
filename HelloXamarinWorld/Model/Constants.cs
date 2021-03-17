@@ -6,7 +6,7 @@ namespace HelloXamarinWorld.Model
 {
     public static class Constants
     {
-        public static string Google_API_KEY = "AIzaSyCCpzQMk0aqReAr-oAiWQk-MY3CJOc6H-8";
+        public static string Google_API_KEY = "";
         public static double Latitude_Degrees = 1;
         public static double Longitude_Degrees = 1;
         public static double Min_DistanceToListenToLocation_Meter = 100;
