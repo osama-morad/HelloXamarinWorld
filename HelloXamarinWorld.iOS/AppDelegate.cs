@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 
 using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace HelloXamarinWorld.iOS
@@ -26,6 +27,7 @@ namespace HelloXamarinWorld.iOS
             global::Xamarin.Forms.Forms.Init();
             //Xamarin.FormsMaps.Init();
             Xamarin.FormsGoogleMaps.Init("AIzaSyCCpzQMk0aqReAr-oAiWQk-MY3CJOc6H-8");
+            CurrentPlatform.Init();
 
             string dbName = "travel_db.sqlite";
             string folderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "..", "Library");

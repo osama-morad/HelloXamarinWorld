@@ -19,7 +19,7 @@ namespace HelloXamarinWorld
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
             try
@@ -30,6 +30,12 @@ namespace HelloXamarinWorld
                     var experiences = conn.Table<Post>().ToList();
                     postListView.ItemsSource = experiences;
                 }
+
+                Need need = new Need()
+                {
+                    NeedType = "فلوس"
+                };
+                await App.MobileService.GetTable<Need>().InsertAsync(need);
             }
             catch (NullReferenceException nre)
             {
