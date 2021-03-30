@@ -19,18 +19,23 @@ namespace HelloXamarinWorld
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
             try
             {
-                postListView.ItemsSource = Post.GetAllPosts();
-                //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-                //{
-                //    conn.CreateTable<Post>();
-                //    var experiences = conn.Table<Post>().ToList();
-                //    postListView.ItemsSource = experiences;
-                //}
+                using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+                {
+                    conn.CreateTable<Post>();
+                    var experiences = conn.Table<Post>().ToList();
+                    postListView.ItemsSource = experiences;
+                }
+
+                Need need = new Need()
+                {
+                    NeedType = "فلوس"
+                };
+                await App.MobileService.GetTable<Need>().InsertAsync(need);
             }
             catch (NullReferenceException nre)
             {

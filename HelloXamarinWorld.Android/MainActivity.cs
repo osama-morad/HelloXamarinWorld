@@ -7,6 +7,7 @@ using Android.OS;
 using System.IO;
 using Android.Content;
 using Plugin.Permissions;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace HelloXamarinWorld.Droid
 {
@@ -20,6 +21,8 @@ namespace HelloXamarinWorld.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
+            CurrentPlatform.Init();
+            // In case MainApplication.cs is not addes to Android project, add this coming line
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
             string dbName = "travel_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
