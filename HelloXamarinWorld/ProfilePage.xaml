@@ -4,9 +4,24 @@
              x:Class="HelloXamarinWorld.ProfilePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to the Profile Page!"
+            <Label x:Name="countOfPostsLabel" 
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="Center" 
+                   FontAttributes="Bold"
+                   TextColor="DodgerBlue"/>
+            <Label Text="Posts"
+                   HorizontalOptions="Center"
+                   TextColor="LightGray" />
+            <ListView x:Name="categoriesListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Path=Key}"
+                                  Detail="{Binding Path=Value}"
+                                  TextColor="DarkBlue">
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

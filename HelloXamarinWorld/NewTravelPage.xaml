@@ -5,6 +5,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="SaveNewTravelExperience" 
                      Text="Save" 
+                     Icon="save.png"
                      Clicked="SaveNewTravelExperience_Clicked">
         </ToolbarItem>
     </ContentPage.ToolbarItems>

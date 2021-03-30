@@ -19,5 +19,22 @@ namespace HelloXamarinWorld.Model
         public double Longitude { get; set; }
         public int Distance { get; set; }
 
+        public static List<Post> GetAllPosts()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<Post>();
+                return conn.Table<Post>().ToList();
+            }
+        }
+
+        public static List<Post> GetAllPosts(string userId)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<Post>();
+                return conn.Table<Post>().Where(e => e.Address == userId).ToList();
+            }
+        }
     }
 }

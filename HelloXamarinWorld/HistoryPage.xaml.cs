@@ -24,12 +24,13 @@ namespace HelloXamarinWorld
             base.OnAppearing();
             try
             {
-                using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-                {
-                    conn.CreateTable<Post>();
-                    var experiences = conn.Table<Post>().ToList();
-                    postListView.ItemsSource = experiences;
-                }
+                postListView.ItemsSource = Post.GetAllPosts();
+                //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+                //{
+                //    conn.CreateTable<Post>();
+                //    var experiences = conn.Table<Post>().ToList();
+                //    postListView.ItemsSource = experiences;
+                //}
             }
             catch (NullReferenceException nre)
             {

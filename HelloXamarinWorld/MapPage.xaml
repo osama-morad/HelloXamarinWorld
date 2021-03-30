@@ -9,5 +9,5 @@
     <maps:Map x:Name="locationMap" 
               HorizontalOptions="FillAndExpand" 
               VerticalOptions="FillAndExpand" 
-               />
+              MapType="Hybrid" />
 </ContentPage>
