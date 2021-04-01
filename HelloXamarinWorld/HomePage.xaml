@@ -5,9 +5,12 @@
              xmlns:local="clr-namespace:HelloXamarinWorld">
 
     <TabbedPage.ToolbarItems>
-        <ToolbarItem x:Name="newTravelAddButton" Text="Add" Clicked="newTravelAddButton_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="newTravelAddButton" 
+                     Text="Add" 
+                     Icon="add.png"
+                     Clicked="newTravelAddButton_Clicked"></ToolbarItem>
     </TabbedPage.ToolbarItems>
-    <local:HistoryPage Title="History"></local:HistoryPage>
-    <local:MapPage Title="Map" ></local:MapPage>
-    <local:ProfilePage Title="Profile" ></local:ProfilePage>
+    <local:HistoryPage Title="History" Icon="home.png"></local:HistoryPage>
+    <local:MapPage Title="Map" Icon="map.png" ></local:MapPage>
+    <local:ProfilePage Title="Profile" Icon="user.png" ></local:ProfilePage>
 </TabbedPage>
