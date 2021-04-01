@@ -31,11 +31,17 @@ namespace HelloXamarinWorld
                     postListView.ItemsSource = experiences;
                 }
 
-                Need need = new Need()
-                {
-                    NeedType = "فلوس"
-                };
-                await App.MobileService.GetTable<Need>().InsertAsync(need);
+                var allNeeds = await App.MobileService.GetTable<Needs>().ReadAsync();
+                var socialStatus = await App.MobileService.GetTable<SocialStatus>().ReadAsync();
+
+                var inNeed = await App.MobileService.GetTable<InNeed>().ReadAsync();
+                var inNeedRequired = await App.MobileService.GetTable<RequiredNeed>().ReadAsync();
+                var inNeedsocialStatus = await App.MobileService.GetTable<InNeedSocialStatus>().ReadAsync();
+                //Needs need = new Needs()
+                //{
+                //    NeedType = "فلوس"
+                //};
+                //await App.MobileService.GetTable<Needs>().InsertAsync(need);
             }
             catch (NullReferenceException nre)
             {

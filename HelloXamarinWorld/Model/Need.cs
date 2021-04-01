@@ -6,7 +6,7 @@ namespace HelloXamarinWorld.Model
     // Needs
 {
     // Needs
-    public class Need
+    public class Needs
     {
         public string Id { get; set; } // Id (Primary key) (length: 36)
         public string NeedType { get; set; } // NeedType (length: 50)
@@ -35,7 +35,7 @@ namespace HelloXamarinWorld.Model
     }
 
     // InNeedSocialStatus
-    public class InNeedSocialStatu
+    public class InNeedSocialStatus
     {
         public string InNeedId { get; set; } // InNeedId (Primary key) (length: 36)
         public string SocialStatusId { get; set; } // SocialStatusId (Primary key) (length: 36)
@@ -60,10 +60,10 @@ namespace HelloXamarinWorld.Model
     }
 
     // SocialStatus
-    public class SocialStatu
+    public class SocialStatus
     {
         public string Id { get; set; } // Id (Primary key) (length: 36)
-        public string SocialStatus { get; set; } // SocialStatus (length: 100)
+        public string SocialStatusType { get; set; } // SocialStatus (length: 100)
     }
 
 
